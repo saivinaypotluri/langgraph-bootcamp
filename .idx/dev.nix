@@ -10,6 +10,9 @@
     # pkgs.python311Packages.pip
     # pkgs.nodejs_22
     # pkgs.nodePackages.nodemon
+    pkgs.python312Packages.pip
+    pkgs.python312Packages.ipykernel
+    pkgs.sudo
   ];
   # Sets environment variables in the workspace
   env = {};
@@ -26,12 +29,8 @@
         # web = {
         #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
         #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
+        #   command = ["npm", "run", "dev", "--", "--port", "$PORT"];
         #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
         # };
       };
     };
@@ -39,15 +38,13 @@
     workspace = {
       # Runs when a workspace is first created
       onCreate = {
-        # Example: install JS dependencies from NPM
+        # Example: install dependencies in your npm project
         # npm-install = "npm install";
-        # Open editors for the following files by default, if they exist:
-        default.openFiles = [ ".idx/dev.nix" "README.md" ];
       };
-      # Runs when the workspace is (re)started
+      # Runs every time the workspace is (re)started
       onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        # Example: start a dev server
+        # start-server = "npm run dev";
       };
     };
   };
