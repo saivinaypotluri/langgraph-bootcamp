@@ -11,18 +11,52 @@ For a detailed developer's journal, including a breakdown of the libraries used 
 *   Python 3.12 or higher
 *   An API key for Google's Generative AI.
 
-### Installation
+### Setup and Installation
 
-1.  Clone the repository.
-2.  Install the dependencies:
+This project uses `uv` for fast dependency management and environment creation.
+
+1.  **Install `uv`**:
+    If you don't have `uv` installed, you can install it with:
     ```bash
-    uv pip install -r requirements.txt
+    pip install uv
     ```
-3.  Create a `.env` file and add your Google API key:
+
+2.  **Clone the Repository**:
+    ```bash
+    git clone <your-repo-url>
+    cd langgraph-tutorial
     ```
+
+3.  **Sync Dependencies**:
+    This command will create a virtual environment (`.venv`) and install all the necessary packages from `pyproject.toml` and `uv.lock`.
+    ```bash
+    uv sync
+    ```
+
+4.  **Set Up Environment Variables**:
+    Create a `.env` file in the root of the project and add your Google API key.
+    ```
+    cp .env.example .env
     GOOGLE_API_KEY="YOUR_API_KEY"
     ```
-4.  Run the Jupyter notebooks.
+    The application will load this key automatically.
+
+5.  **Run the Jupyter Notebooks**:
+    You can run Jupyter Notebook from within the `uv`-managed environment.
+    ```bash
+    uv run jupyter notebook
+    ```
+    This ensures you are using the packages you just installed. Alternatively, you can activate the environment first:
+    ```bash
+    # macOS / Linux
+    source .venv/bin/activate
+
+    # Windows
+    .venv\Scripts\activate
+
+    # Then run jupyter
+    jupyter notebook
+    ```
 
 ## Key Libraries and Modules
 
