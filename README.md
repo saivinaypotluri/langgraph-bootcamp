@@ -23,7 +23,7 @@ This project uses `uv` for fast dependency management and environment creation.
 
 2.  **Clone the Repository**:
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/saivinaypotluri/langgraph-bootcamp.git
     cd langgraph-tutorial
     ```
 
