@@ -10,7 +10,7 @@ My primary goal was to move beyond simple, linear LLM chains and understand how 
 
 1.  **Clone the Repository**:
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/saivinaypotluri/langgraph-bootcamp.git
     cd langgraph-tutorial
     ```
 2.  **Install Dependencies with `uv`**:
